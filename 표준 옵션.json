@@ -1,0 +1,772 @@
+{
+  "useStandardOption": true,
+  "standardOptionCategoryGroups": [
+    {
+      "attributeId": 10014204,
+      "attributeName": "사이즈(한국)",
+      "groupName": "사이즈",
+      "imageRegistrationUsable": false,
+      "realValueUsable": false,
+      "optionSetRequired": true,
+      "standardOptionAttributes": [
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696132,
+          "attributeValueName": "210"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696133,
+          "attributeValueName": "215"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696134,
+          "attributeValueName": "220"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696136,
+          "attributeValueName": "225"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696137,
+          "attributeValueName": "230"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696138,
+          "attributeValueName": "235"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696139,
+          "attributeValueName": "240"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696140,
+          "attributeValueName": "245"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696141,
+          "attributeValueName": "250"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696142,
+          "attributeValueName": "255"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696143,
+          "attributeValueName": "260"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696144,
+          "attributeValueName": "265"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696145,
+          "attributeValueName": "270"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696146,
+          "attributeValueName": "275"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696147,
+          "attributeValueName": "280"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696148,
+          "attributeValueName": "285"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696149,
+          "attributeValueName": "290"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696150,
+          "attributeValueName": "295"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696151,
+          "attributeValueName": "300"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696152,
+          "attributeValueName": "305"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10696153,
+          "attributeValueName": "310"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10765971,
+          "attributeValueName": "one size"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10834617,
+          "attributeValueName": "Free"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10443624,
+          "attributeValueName": "S"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10031499,
+          "attributeValueName": "M"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10443630,
+          "attributeValueName": "L"
+        },
+        {
+          "attributeId": 10014204,
+          "attributeValueId": 10031501,
+          "attributeValueName": "XL"
+        }
+      ]
+    },
+    {
+      "attributeId": 10014205,
+      "attributeName": "사이즈(미국)",
+      "groupName": "사이즈",
+      "imageRegistrationUsable": false,
+      "realValueUsable": false,
+      "optionSetRequired": true,
+      "standardOptionAttributes": [
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10776793,
+          "attributeValueName": "US 3"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10776794,
+          "attributeValueName": "US 3.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10772854,
+          "attributeValueName": "US 4"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10776795,
+          "attributeValueName": "US 4.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765972,
+          "attributeValueName": "US 5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765973,
+          "attributeValueName": "US 5.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765974,
+          "attributeValueName": "US 6"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765975,
+          "attributeValueName": "US 6.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765976,
+          "attributeValueName": "US 7"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765977,
+          "attributeValueName": "US 7.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765978,
+          "attributeValueName": "US 8"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765979,
+          "attributeValueName": "US 8.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765980,
+          "attributeValueName": "US 9"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765981,
+          "attributeValueName": "US 9.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765982,
+          "attributeValueName": "US 10"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765983,
+          "attributeValueName": "US 10.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765984,
+          "attributeValueName": "US 11"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765985,
+          "attributeValueName": "US 11.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765986,
+          "attributeValueName": "US 12"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765987,
+          "attributeValueName": "US 12.5"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765988,
+          "attributeValueName": "US 13"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10765971,
+          "attributeValueName": "one size"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10834617,
+          "attributeValueName": "Free"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10443624,
+          "attributeValueName": "S"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10031499,
+          "attributeValueName": "M"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10443630,
+          "attributeValueName": "L"
+        },
+        {
+          "attributeId": 10014205,
+          "attributeValueId": 10031501,
+          "attributeValueName": "XL"
+        }
+      ]
+    },
+    {
+      "attributeId": 10014206,
+      "attributeName": "사이즈(유럽)",
+      "groupName": "사이즈",
+      "imageRegistrationUsable": false,
+      "realValueUsable": false,
+      "optionSetRequired": true,
+      "standardOptionAttributes": [
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10771424,
+          "attributeValueName": "EU 34"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10776829,
+          "attributeValueName": "EU 34.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10771425,
+          "attributeValueName": "EU 35"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10771426,
+          "attributeValueName": "EU 35.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765989,
+          "attributeValueName": "EU 36"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765990,
+          "attributeValueName": "EU 36.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765991,
+          "attributeValueName": "EU 37"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765992,
+          "attributeValueName": "EU 37.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765993,
+          "attributeValueName": "EU 38"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765994,
+          "attributeValueName": "EU 38.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765995,
+          "attributeValueName": "EU 39"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765996,
+          "attributeValueName": "EU 39.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765997,
+          "attributeValueName": "EU 40"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765998,
+          "attributeValueName": "EU 40.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765999,
+          "attributeValueName": "EU 41"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766000,
+          "attributeValueName": "EU 41.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766001,
+          "attributeValueName": "EU 42"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766002,
+          "attributeValueName": "EU 42.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766003,
+          "attributeValueName": "EU 43"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766004,
+          "attributeValueName": "EU 43.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766005,
+          "attributeValueName": "EU 44"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766006,
+          "attributeValueName": "EU 44.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766007,
+          "attributeValueName": "EU 45"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10766008,
+          "attributeValueName": "EU 45.5"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10765971,
+          "attributeValueName": "one size"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10834617,
+          "attributeValueName": "Free"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10443624,
+          "attributeValueName": "S"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10031499,
+          "attributeValueName": "M"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10443630,
+          "attributeValueName": "L"
+        },
+        {
+          "attributeId": 10014206,
+          "attributeValueId": 10031501,
+          "attributeValueName": "XL"
+        }
+      ]
+    },
+    {
+      "attributeId": 10014207,
+      "attributeName": "사이즈(영국)",
+      "groupName": "사이즈",
+      "imageRegistrationUsable": false,
+      "realValueUsable": false,
+      "optionSetRequired": true,
+      "standardOptionAttributes": [
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766009,
+          "attributeValueName": "UK 2.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766010,
+          "attributeValueName": "UK 3"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766011,
+          "attributeValueName": "UK 3.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766012,
+          "attributeValueName": "UK 4"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766013,
+          "attributeValueName": "UK 4.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766014,
+          "attributeValueName": "UK 5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766015,
+          "attributeValueName": "UK 5.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766016,
+          "attributeValueName": "UK 6"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766017,
+          "attributeValueName": "UK 6.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766018,
+          "attributeValueName": "UK 7"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766019,
+          "attributeValueName": "UK 7.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766020,
+          "attributeValueName": "UK 8"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766021,
+          "attributeValueName": "UK 8.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766022,
+          "attributeValueName": "UK 9"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766023,
+          "attributeValueName": "UK 9.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766024,
+          "attributeValueName": "UK 10"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766025,
+          "attributeValueName": "UK 10.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766026,
+          "attributeValueName": "UK 11"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766027,
+          "attributeValueName": "UK 11.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766028,
+          "attributeValueName": "UK 12"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10766029,
+          "attributeValueName": "UK 12.5"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10765971,
+          "attributeValueName": "one size"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10834617,
+          "attributeValueName": "Free"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10443624,
+          "attributeValueName": "S"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10031499,
+          "attributeValueName": "M"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10443630,
+          "attributeValueName": "L"
+        },
+        {
+          "attributeId": 10014207,
+          "attributeValueId": 10031501,
+          "attributeValueName": "XL"
+        }
+      ]
+    },
+    {
+      "attributeId": 10014203,
+      "attributeName": "색상",
+      "groupName": "색상",
+      "imageRegistrationUsable": true,
+      "realValueUsable": true,
+      "optionSetRequired": true,
+      "standardOptionAttributes": [
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031739,
+          "attributeValueName": "레드",
+          "attributeColorCode": "#FF0000"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10671461,
+          "attributeValueName": "버건디",
+          "attributeColorCode": "#A62C54"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031736,
+          "attributeValueName": "오렌지",
+          "attributeColorCode": "#FFA500"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10197443,
+          "attributeValueName": "골드",
+          "attributeColorCode": "#FFD700"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031742,
+          "attributeValueName": "옐로우",
+          "attributeColorCode": "#FFFF00"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10669310,
+          "attributeValueName": "라임",
+          "attributeColorCode": "#AAF543"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10533144,
+          "attributeValueName": "그린",
+          "attributeColorCode": "#36B401"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031743,
+          "attributeValueName": "카키",
+          "attributeColorCode": "#71842F"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10531885,
+          "attributeValueName": "민트",
+          "attributeColorCode": "#71ECDC"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10669048,
+          "attributeValueName": "스카이블루",
+          "attributeColorCode": "#87CEEB"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031731,
+          "attributeValueName": "블루",
+          "attributeColorCode": "#0000FF"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031732,
+          "attributeValueName": "네이비",
+          "attributeColorCode": "#000080"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031738,
+          "attributeValueName": "퍼플",
+          "attributeColorCode": "#800080"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10545495,
+          "attributeValueName": "바이올렛",
+          "attributeColorCode": "#8865E0"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10241290,
+          "attributeValueName": "핑크",
+          "attributeColorCode": "#FFC0CB"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10411187,
+          "attributeValueName": "핫핑크",
+          "attributeColorCode": "#F7027C"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10241293,
+          "attributeValueName": "베이지",
+          "attributeColorCode": "#F4D6A1"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10696336,
+          "attributeValueName": "카멜",
+          "attributeColorCode": "#D6855A"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10531874,
+          "attributeValueName": "브라운",
+          "attributeColorCode": "#8B4513"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10531869,
+          "attributeValueName": "화이트",
+          "attributeColorCode": "color-type-white"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10531875,
+          "attributeValueName": "아이보리",
+          "attributeColorCode": "#F2EFDE"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031729,
+          "attributeValueName": "실버",
+          "attributeColorCode": "#C0C0C0"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10040013,
+          "attributeValueName": "그레이",
+          "attributeColorCode": "#808080"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10679194,
+          "attributeValueName": "차콜",
+          "attributeColorCode": "#4A515F"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10031727,
+          "attributeValueName": "블랙",
+          "attributeColorCode": "#000000"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10199545,
+          "attributeValueName": "투명",
+          "attributeColorCode": "color-type-trans"
+        },
+        {
+          "attributeId": 10014203,
+          "attributeValueId": 10674946,
+          "attributeValueName": "멀티",
+          "attributeColorCode": "color-type-multi"
+        }
+      ]
+    }
+  ]
+}
