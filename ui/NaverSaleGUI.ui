@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1812</width>
-    <height>1815</height>
+    <width>1868</width>
+    <height>1829</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -64,7 +64,7 @@ color: rgb(44, 62, 80);</string>
        <property name="font">
         <font>
          <family>맑은 고딕</family>
-         <pointsize>11</pointsize>
+         <pointsize>20</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -91,8 +91,8 @@ color: rgb(44, 62, 80);</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>70</width>
-         <height>30</height>
+         <width>91</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
@@ -178,7 +178,7 @@ padding: 2px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1766</width>
+        <width>1831</width>
         <height>2418</height>
        </rect>
       </property>
@@ -280,7 +280,7 @@ padding: 2px;</string>
               <property name="minimumSize">
                <size>
                 <width>183</width>
-                <height>30</height>
+                <height>40</height>
                </size>
               </property>
              </widget>
@@ -294,7 +294,7 @@ padding: 2px;</string>
             <x>20</x>
             <y>110</y>
             <width>881</width>
-            <height>941</height>
+            <height>1131</height>
            </rect>
           </property>
           <property name="title">
@@ -444,7 +444,13 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_Price">
+               <widget class="QLineEdit" name="lineEdit_salePrice">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -500,7 +506,13 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_Quantity">
+               <widget class="QLineEdit" name="lineEdit_stockQuantity">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -513,8 +525,8 @@ padding: 2px;</string>
           <widget class="Line" name="line">
            <property name="geometry">
             <rect>
-             <x>20</x>
-             <y>650</y>
+             <x>30</x>
+             <y>780</y>
              <width>841</width>
              <height>16</height>
             </rect>
@@ -527,9 +539,9 @@ padding: 2px;</string>
            <property name="geometry">
             <rect>
              <x>20</x>
-             <y>680</y>
+             <y>870</y>
              <width>120</width>
-             <height>31</height>
+             <height>40</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -541,7 +553,7 @@ padding: 2px;</string>
            <property name="minimumSize">
             <size>
              <width>120</width>
-             <height>30</height>
+             <height>40</height>
             </size>
            </property>
            <property name="font">
@@ -570,7 +582,7 @@ padding: 2px;</string>
            <property name="geometry">
             <rect>
              <x>20</x>
-             <y>730</y>
+             <y>920</y>
              <width>841</width>
              <height>191</height>
             </rect>
@@ -636,7 +648,13 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_color">
+               <widget class="QLineEdit" name="lineEdit_option1">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -692,7 +710,13 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_color_3">
+               <widget class="QLineEdit" name="lineEdit_option2">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -748,7 +772,13 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_color_2">
+               <widget class="QLineEdit" name="lineEdit_option3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -828,16 +858,37 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QDateEdit" name="dateEdit">
+               <widget class="QDateEdit" name="dateEdit_SaleFrom">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTimeEdit" name="timeEdit">
+               <widget class="QTimeEdit" name="timeEdit_SaleFrom">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>false</bool>
+                </property>
+                <property name="currentSectionIndex">
+                 <number>0</number>
                 </property>
                </widget>
               </item>
@@ -891,14 +942,29 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QDateEdit" name="dateEdit_2">
+               <widget class="QDateEdit" name="dateEdit_SaleTo">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTimeEdit" name="timeEdit_2">
+               <widget class="QTimeEdit" name="timeEdit_SaleTo">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -978,14 +1044,29 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QDateEdit" name="dateEdit_3">
+               <widget class="QDateEdit" name="dateEdit_DiscountFrom">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTimeEdit" name="timeEdit_3">
+               <widget class="QTimeEdit" name="timeEdit_DiscountFrom">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -1041,14 +1122,29 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QDateEdit" name="dateEdit_4">
+               <widget class="QDateEdit" name="dateEdit_DiscountTo">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTimeEdit" name="timeEdit_4">
+               <widget class="QTimeEdit" name="timeEdit_DiscountTo">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -1129,6 +1225,12 @@ padding: 2px;</string>
               </item>
               <item>
                <widget class="QLineEdit" name="lineEdit_Price_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -1155,6 +1257,12 @@ padding: 2px;</string>
               </property>
               <item>
                <widget class="QLineEdit" name="lineEdit_Quantity_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -1163,6 +1271,31 @@ padding: 2px;</string>
              </layout>
             </item>
            </layout>
+          </widget>
+          <widget class="QTextEdit" name="textEdit_detailContent">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>520</y>
+             <width>741</width>
+             <height>199</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>199</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
           </widget>
          </widget>
          <widget class="QWidget" name="horizontalLayoutWidget_4">
@@ -1366,7 +1499,7 @@ padding: 2px;</string>
                <property name="minimumSize">
                 <size>
                  <width>140</width>
-                 <height>30</height>
+                 <height>40</height>
                 </size>
                </property>
                <property name="font">
@@ -1410,7 +1543,7 @@ padding: 2px;</string>
                 <number>6</number>
                </property>
                <item>
-                <widget class="QLineEdit" name="lineEdit_categoryID_3">
+                <widget class="QLineEdit" name="lineEdit_catalogID">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -1438,7 +1571,7 @@ padding: 2px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_categoryID_2">
+                <widget class="QLineEdit" name="lineEdit_catalogName">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -1911,91 +2044,11 @@ padding: 2px;</string>
           <property name="title">
            <string>배송정보</string>
           </property>
-          <widget class="QWidget" name="horizontalLayoutWidget_7">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>40</y>
-             <width>751</width>
-             <height>80</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_13">
-            <property name="leftMargin">
-             <number>6</number>
-            </property>
-            <property name="topMargin">
-             <number>6</number>
-            </property>
-            <property name="rightMargin">
-             <number>6</number>
-            </property>
-            <property name="bottomMargin">
-             <number>6</number>
-            </property>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_23">
-              <property name="spacing">
-               <number>5</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>6</number>
-              </property>
-              <property name="rightMargin">
-               <number>6</number>
-              </property>
-              <property name="bottomMargin">
-               <number>6</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="label_27">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>55</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>맑은 고딕</family>
-                  <pointsize>13</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>재고량</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_Quantity_2">
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
           <widget class="QWidget" name="horizontalLayoutWidget_8">
            <property name="geometry">
             <rect>
              <x>20</x>
-             <y>130</y>
+             <y>40</y>
              <width>751</width>
              <height>80</height>
             </rect>
@@ -2053,7 +2106,7 @@ padding: 2px;</string>
                  </font>
                 </property>
                 <property name="text">
-                 <string>배송비</string>
+                 <string>배송비（기본）</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -2061,7 +2114,13 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_Price_5">
+               <widget class="QLineEdit" name="lineEdit_baseFee">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
@@ -2109,7 +2168,7 @@ padding: 2px;</string>
                  </font>
                 </property>
                 <property name="text">
-                 <string>재고량</string>
+                 <string>배송비（도서산간）</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -2117,7 +2176,420 @@ padding: 2px;</string>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_Quantity_4">
+               <widget class="QLineEdit" name="lineEdit_area2extraFee">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="horizontalLayoutWidget_9">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>130</y>
+             <width>751</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_31">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_32">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_31">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>맑은 고딕</family>
+                  <pointsize>13</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>배송비（환불）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_returnDeliveryFee">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_33">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_32">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>맑은 고딕</family>
+                  <pointsize>13</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>배송비（교환）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_exchangeDeliveryFee">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_26">
+          <property name="geometry">
+           <rect>
+            <x>62</x>
+            <y>711</y>
+            <width>68</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>55</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>맑은 고딕</family>
+            <pointsize>13</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>상품설명</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>1290</y>
+            <width>881</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>이미지</string>
+          </property>
+          <widget class="QWidget" name="verticalLayoutWidget_3">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>50</y>
+             <width>841</width>
+             <height>191</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="leftMargin">
+               <number>6</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_27">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>맑은 고딕</family>
+                  <pointsize>13</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>메인</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_MainImage">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_22">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="leftMargin">
+               <number>6</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_28">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>맑은 고딕</family>
+                  <pointsize>13</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>추가</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_ExtraImage">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_23">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="leftMargin">
+               <number>6</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_33">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>맑은 고딕</family>
+                  <pointsize>13</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>옵션</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_OptionImage">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>

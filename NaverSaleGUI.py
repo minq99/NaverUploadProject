@@ -2,27 +2,30 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
-from NaverSaleGUI_Popup import *
 import time
 import datetime
 import requests
 from itertools import product
-import Lib.Common
-from Lib.UploadTool import * 
-from Lib.SearchTool import *
-from Lib.RenewTool import *
+import tools.Common
+from tools.UploadTool import * 
+from tools.SearchTool import *
+from tools.RenewTool import *
+# 옵션 화면
+from NaverSaleGUI_Option import WindowClass_option
+from NaverSaleGUI_Catalog import WindowClass_catalog
+
+
+# UI파일 연결
+#단, UI파일은 Python 현재 폴더 내부의 ui 폴더에 위치해야한다.
+form_class = uic.loadUiType("ui/NaverSaleGUI.ui")[0]
+
+
 
 print("access_token: ", access_token)
-ItemInfo_notification_Categories = get_ItemInfo_notification_Categories()
-
 
 [x['name'] for x in get_Major_Categories()]
 [x['id'] for x in get_Major_Categories()]
-
-#UI파일 연결
-#단, UI파일은 Python 코드 파일과 같은 디렉토리에 위치해야한다.
-form_class = uic.loadUiType("ui/NaverSaleGUI.ui")[0]
-
+ItemInfo_notification_Categories = get_ItemInfo_notification_Categories()
 ItemInfo_notifications_WEAR = ['A','B','C']
 ItemInfo_notifications_SHOES = ['A','B','C','D','E','A','B','C','D','E']
 
@@ -34,9 +37,8 @@ class WindowClass_main(QDialog, form_class) :
         super().__init__()
         self.setupUi(self)
 
-#### 변수 설정 ########################################################################################################################################################################################################
-
-##### 고정변수 ##### 
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  변수 선언  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    ##### 고정변수 ##### 
 
         # AS 정보
         self.afterServiceTelephoneNumber = '010-2936-1595'
@@ -45,11 +47,10 @@ class WindowClass_main(QDialog, form_class) :
         # 판매 기간 정보
         self.saleStartDate = (datetime.datetime.now() + datetime.timedelta(minutes=3)).strftime('%Y-%m-%dT%H:%M:%SZ')  # 현재로부터 3분 뒤
         self.saleEndDate = '2099-01-13T01:30:56Z'
-
+        
         # 세일 기간 정보
         self.Discount_StartDate = (datetime.datetime.now() + datetime.timedelta(hours=1)).strftime('%Y-%m-%dT%H')+':00:00Z'  # 현재로부터 다음 정각
         self.Discount_EndDate = '2099-01-13T01:59:00Z'
-
 
         # 원산지 정보
         self.originAreaInfo_JAPAN = {
@@ -67,18 +68,19 @@ class WindowClass_main(QDialog, form_class) :
 
 
 ##### 상품등록에 필요한 변수들 #####
-        # 상품 이름
+        # 상품 이름 // ok
         self.name = ''
-        # 상품 상세설명
+        # 상품 상세설명 // ok
         self.detailContent = ''
-        # 판매 가격 (필수)
-        self.salePrice = 0 
-        # 재고량
-        self.stockQuantity = 100
-        # 리프 카테고리 id
+        # 판매 가격 (필수) // ok
+        self.salePrice = 0  
+        # 재고량 // ok
+        self.stockQuantity = 1000
+        # 리프 카테고리 id  // ok
         self.leafCategoryId = ''
-        # 네이버쇼핑 검색 정보 (카탈로그)
-        self.catalog_Id = ''
+
+        # 네이버쇼핑 검색 정보 (카탈로그) //ok
+        self.catalog_Id = '' 
         self.naverShoppingSearchInfo = {
         "modelId": '',
         "modelName": '',
@@ -86,17 +88,26 @@ class WindowClass_main(QDialog, form_class) :
         "brandId": '',
         "brandName": ''
         }
-        #옵션
-        self.options_and_urls = {}    # 이미지 있는 경우
-        self.options_size  = []       # 사이즈
-        self.options_color = []      
-        # 표준 옵션
-        self.standard_attribute_size  = []
-        self.standard_attribute_color = []
+
+        #옵션 // ok
+        self.ImageUrl_Main   =  []  #image_upload('image/240119/main/') 
+        self.ImageUrl_Extra  =  []  #image_upload('image/240119/extra/')
+        self.ImageUrl_option =  []  #image_upload('image/240119/option/')
+
+        # 대표이미지, 추가이미지 URL // ok
+        self.representativeImageURL = '' #ImageUrl_Main[0][1] # 블랙 
+        self.optionalImagesURLs = '' #[ {"url": x[1]} for x in ImageUrl_Extra]
+
+        # 사이즈 및 색깔 등 // ok
+        self.options_1  = []       
+        self.options_2  = []      
+        self.options_3  = []      
+
+        # 표준 옵션 -> 카테고리 아이디를 타고 가서 어떤 표준옵션을 선택할지 정해야함. // ok
+        self.standard_attribute_1  = [] # get_standard_attribute(leafCategoryId, '사이즈(한국)',  options_1 )
+        self.standard_attribute_2 = []
+        
         # 메인/서브 이미지 등록 
-        self.image_urls = {}
-        self.representativeImageURL = '' # 대표이미지 URL         // image_urls 활용
-        self.optionalImagesURLs = []     # 추가 이미지 URL 목록   // image_urls 활용
         self.OptionGroup1 = {}  # 옵션 1
         self.OptionGroup2 = {}  # 옵션 2
         # 옵션 매칭
@@ -128,15 +139,20 @@ class WindowClass_main(QDialog, form_class) :
         self.metaDescription = "한줄 설명"
         self.tags = []
         self.seoInfo = {}
+
         # 할인 정보
         self.discount_unitType = 'PERCENT' # 할인 단위 타입 ->  PERCENT, WON만 입력 가능합니다.
         self.discount_value  = ''        # 할인 단위에 따른 값을 입력합니다.
         self.discount_startDate = ''
         self.discount_endDate = ''
+
+        # 배송요금 // ok
         self.baseFee = 4000  # 기본요금
         self.area2extraFee = 7000
         self.returnDeliveryFee = 4000
         self.exchangeDeliveryFee = 8000
+        
+
         self.deliveryInfo =  {
                             "deliveryType": "DELIVERY",                  # DELIVERY(택배, 소포, 등기), DIRECT(직접배송(화물배달))
                             "deliveryAttributeType": "NORMAL",
@@ -164,11 +180,7 @@ class WindowClass_main(QDialog, form_class) :
                             # "todayStockQuantity": 0,
                             # "customProductAfterOrderYn": True,
                             # "hopeDeliveryGroupId": 0
-                             }
-
-
-
-
+                            }    
 
 ##### 로직에 필요한 중간 변수들 #####
         self.lineedits_ItemInfo_notification = []
@@ -180,6 +192,20 @@ class WindowClass_main(QDialog, form_class) :
         self.ctgy2 = '' # 중분류 id
         self.ctgy3 = '' # 소분류 id
         self.ctgy4 = '' # 세분류 id
+        
+        self.category_Name = ''
+
+        # 이미지 경로
+        self.MainImgPath   =  ''  # image/240119/main/
+        self.ExtraImgPath  =  ''  # image/240119/extra/
+        self.OptionImgPath =  ''  # image/240119/option/
+
+        # 표준 옵션 이름
+        self.standard_option_name_1 = '사이즈(한국)'
+        self.standard_option_name_2 = '색상'
+        self.standard_option_name_3 = ''
+
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  메소드  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 
 #### 버튼 메소드 ########################################################################################################################################################################################################
@@ -189,8 +215,65 @@ class WindowClass_main(QDialog, form_class) :
         self.btn_option.clicked.connect(self.popup_option)
         self.btn_search_catalog.clicked.connect(self.popup_catalog)
 
-#### 입력창 메소드 ########################################################################################################################################################################################################
-        self.textEdit_ItemName.textChanged.connect(self.set_name)
+
+
+#### 입력창 메소드/ 세팅 ########################################################################################################################################################################################################
+        # 제목
+        self.textEdit_ItemName.textChanged.connect(self.set_Itemname)
+        # 상품상세
+        self.textEdit_detailContent.textChanged.connect(self.set_detailContent)
+        # 가격
+        self.lineEdit_salePrice.textChanged.connect(self.set_salePrice)
+        # 재고량
+        self.lineEdit_stockQuantity.setText(str(self.stockQuantity))
+        self.lineEdit_stockQuantity.textChanged.connect(self.set_stockQuantity)
+
+        # 판매시작/판매마감/할인시작/할인마감 데이터 
+        self.dateEdit_SaleFrom.setDate(QDateTime.fromString(self.saleStartDate, Qt.ISODate).date())
+        self.timeEdit_SaleFrom.setTime(QDateTime.fromString(self.saleStartDate, Qt.ISODate).time())
+        self.dateEdit_SaleTo.setDate(QDateTime.fromString(self.saleEndDate, Qt.ISODate).date())
+        self.timeEdit_SaleTo.setTime(QDateTime.fromString(self.saleEndDate, Qt.ISODate).time())
+        self.dateEdit_DiscountFrom.setDate(QDateTime.fromString(self.Discount_StartDate, Qt.ISODate).date())
+        self.timeEdit_DiscountFrom.setTime(QDateTime.fromString(self.Discount_StartDate, Qt.ISODate).time())
+        self.dateEdit_DiscountTo.setDate(QDateTime.fromString(self.Discount_EndDate, Qt.ISODate).date())
+        self.timeEdit_DiscountTo.setTime(QDateTime.fromString(self.Discount_EndDate, Qt.ISODate).time())
+        self.dateEdit_SaleFrom.dateChanged.connect(self.SaleFrom_datetime)
+        self.timeEdit_SaleFrom.timeChanged.connect(self.SaleFrom_datetime)
+        self.dateEdit_SaleTo.dateChanged.connect(self.SaleTo_datetime)
+        self.timeEdit_SaleTo.timeChanged.connect(self.SaleTo_datetime)
+        self.dateEdit_DiscountFrom.dateChanged.connect(self.DiscountFrom_datetime)
+        self.timeEdit_DiscountFrom.timeChanged.connect(self.DiscountFrom_datetime)
+        self.dateEdit_DiscountTo.dateChanged.connect(self.DiscountTo_datetime)
+        self.timeEdit_DiscountTo.timeChanged.connect(self.DiscountTo_datetime)
+
+        # 이미지 경로 입력창
+        self.lineEdit_MainImage.textChanged.connect(self.set_MainImagePath)    
+        self.lineEdit_ExtraImage.textChanged.connect(self.set_ExtraImagePath)    
+        self.lineEdit_OptionImage.textChanged.connect(self.set_OptionImage)   
+
+        # 옵션
+        self.lineEdit_option1.textChanged.connect(self.set_Option1)  
+        self.lineEdit_option2.textChanged.connect(self.set_Option2)  
+        self.lineEdit_option3.textChanged.connect(self.set_Option3)  
+
+
+        # 배송비 입력창
+        self.lineEdit_baseFee.setText(str(self.baseFee))
+        self.lineEdit_area2extraFee.setText(str(self.area2extraFee))
+        self.lineEdit_returnDeliveryFee.setText(str(self.returnDeliveryFee))
+        self.lineEdit_exchangeDeliveryFee.setText(str(self.exchangeDeliveryFee))
+        self.lineEdit_baseFee.textChanged.connect(self.set_Basefee)
+        self.lineEdit_area2extraFee.textChanged.connect(self.set_area2extraFee)
+        self.lineEdit_returnDeliveryFee.textChanged.connect(self.set_returnDeliveryFee)
+        self.lineEdit_exchangeDeliveryFee.textChanged.connect(self.set_exchangeDeliveryFee)
+
+
+
+
+
+
+
+
 
 #### 콤보박스 데이터 추가 및 메소드 ########################################################################################################################################################################################################
         self.comboBox_ItemInfo_notification.addItems([x[0] for x in ItemInfo_notification_Categories])
@@ -212,14 +295,68 @@ class WindowClass_main(QDialog, form_class) :
 
 
 
-
     def print_values(self):
-        print("print_values clicked!")
-        print("name = ", self.name )
+        print("****************** values click! ******************")
+        print("name: ", self.name)
+        print("detailContent: ",  self.detailContent)
+        print("salePrice: ", self.salePrice)
+        print("stockQuantity: ", self.stockQuantity)
+        print("leafCategoryId: ", self.leafCategoryId)
 
-    def set_name(self):
-        self.name = self.textEdit_name.toPlainText()
+        print("saleStartDate: ", self.saleStartDate)
+        print("saleEndDate: ", self.saleEndDate)
+        print("Discount_StartDate: ",self.Discount_StartDate)
+        print("Discount_EndDate: ", self.Discount_EndDate) 
+
+        print("MainImgPath: ", self.MainImgPath)   
+        print("ExtraImgPath: ", self.ExtraImgPath) 
+        print("OptionImgPath: ", self.OptionImgPath) 
+
+        # # 메인, 추가, 옵션 이미지
+        # self.ImageUrl_Main   = image_upload(self.MainImgPath) 
+
+        # if self.ExtraImgPath: 
+        #     self.ImageUrl_Extra  = image_upload(self.ExtraImgPath)
+        #     self.optionalImagesURLs = self.ImageUrl_Main[0][1]
+
+        # if self.OptionImgPath: 
+        #     self.ImageUrl_option = image_upload(self.OptionImgPath)
+        #     self.optionalImagesURLs = [ {"url": x[1]} for x in self.ImageUrl_Extra]
+
+        print("ImageUrl_Main: ", self.ImageUrl_Main)   
+        print("ImageUrl_Extra: ", self.ImageUrl_Extra) 
+        print("ImageUrl_option: ", self.ImageUrl_option) 
+
+        print(f"{self.standard_option_name_1}: ", self.options_1)
+        print(f"{self.standard_option_name_2}: ", self.options_2)
+        print(f"{self.standard_option_name_3}: ", self.options_3)
+
+        # # standard_attribute 설정 -> standard_option_name 설정해야함
+        # if self.standard_option_name_1:
+        #     self.standard_attribute_1  = get_standard_attribute(self.leafCategoryId, self.standard_option_name_1,  self.options_1 )
+        # if self.standard_option_name_2:
+        #     self.standard_attribute_2  = get_standard_attribute(self.leafCategoryId, self.standard_option_name_2,  self.options_2 )
+        # if self.standard_option_name_3:
+        #     self.standard_attribute_3  = get_standard_attribute(self.leafCategoryId, self.standard_option_name_3,  self.options_3 )
+
+
+
+
+
+
+
+    def set_Itemname(self):
+        self.name = self.textEdit_ItemName.toPlainText()
     
+    def set_detailContent(self):
+        self.detailContent = self.textEdit_detailContent.toPlainText()
+        
+    def set_salePrice(self):
+        self.salePrice = int(self.lineEdit_salePrice.text())
+
+    def set_stockQuantity(self):
+        self.stockQuantity = int(self.lineEdit_stockQuantity.text())
+
     def changeTextFunction(self):
         self.textEdit_name.setText("url으로부터 가져온 이름")
 
@@ -318,24 +455,108 @@ class WindowClass_main(QDialog, form_class) :
     
 
 
+    def SaleFrom_datetime(self):
+        updated_date = self.dateEdit_SaleFrom.date()
+        updated_time = self.timeEdit_SaleFrom.time()
+        updated_datetime = QDateTime(updated_date, updated_time)
+        self.saleStartDate = updated_datetime.toString(Qt.ISODate)
 
+    def SaleTo_datetime(self):
+        updated_date = self.dateEdit_SaleTo.date()
+        updated_time = self.timeEdit_SaleTo.time()
+        updated_datetime = QDateTime(updated_date, updated_time)
+        self.saleEndDate = updated_datetime.toString(Qt.ISODate)
+
+    def DiscountFrom_datetime(self):
+        updated_date = self.dateEdit_DiscountFrom.date()
+        updated_time = self.timeEdit_DiscountFrom.time()
+        updated_datetime = QDateTime(updated_date, updated_time)
+        self.Discount_StartDate = updated_datetime.toString(Qt.ISODate)
+
+
+    def DiscountTo_datetime(self):
+        updated_date = self.dateEdit_DiscountTo.date()
+        updated_time = self.timeEdit_DiscountTo.time()
+        updated_datetime = QDateTime(updated_date, updated_time)
+        self.Discount_EndDate = updated_datetime.toString(Qt.ISODate)
+
+
+
+    # 팝업 옵션
     def popup_option(self):
-        self.window2 = WindowClass_option()
+        self.window2 = WindowClass_option(self.leafCategoryId)
         self.window2.exec_()
-
+        # exec_() 아래 코드는 팝업이 닫히고 난 뒤 실행됨
         self.lineEdit_color.setText(self.window2.color) 
         self.color = self.window2.color
 
         self.show()
 
+
     def popup_catalog(self):
-        pass
+        self.window3 = WindowClass_catalog()
+        self.window3.exec_()
+        # exec_() 아래 코드는 팝업이 닫히고 난 뒤 실행됨
 
-    def popup_category(self):
-        pass
+        self.lineEdit_catalogID.setText(self.window3.catalog_Id) 
+        self.catalog_Id = self.window3.catalog_Id
+
+        self.lineEdit_catalogName.setText(self.window3.catalog_Name) 
+        self.naverShoppingSearchInfo = self.window3.catalog_Name
+
+        self.lineEdit_categoryID.setText(self.window3.leafCategoryId_popup) 
+        self.leafCategoryId = self.window3.leafCategoryId_popup
+
+        self.category_Name = self.window3.category_Name
+        for comboBox in [self.comboBox_Ctgy1, self.comboBox_Ctgy2, self.comboBox_Ctgy3, self.comboBox_Ctgy4]:
+            comboBox.setCurrentIndex(-1)
 
 
 
+
+    def set_Option1(self):
+        self.options_1 = self.lineEdit_option1.text()
+    
+    def set_Option2(self):
+        self.options_2 = self.lineEdit_option2.text()
+
+
+    def set_Option3(self):
+        self.options_3 = self.lineEdit_option3.text()
+
+
+
+
+
+    def set_MainImagePath(self): 
+        self.MainImgPath   =  self.lineEdit_MainImage.text()
+
+    def set_ExtraImagePath(self): 
+        self.ExtraImgPath  =  self.lineEdit_ExtraImage.text()
+
+    def set_OptionImage(self): 
+        self.OptionImgPath =  self.lineEdit_OptionImage.text()
+
+    def set_Basefee(self): 
+        self.baseFee = self.lineEdit_baseFee.text()
+
+    def set_area2extraFee(self): 
+        self.area2extraFee = self.lineEdit_area2extraFee.text()
+
+    def set_returnDeliveryFee(self): 
+        self.returnDeliveryFee = self.lineEdit_returnDeliveryFee.text()
+        
+    def set_exchangeDeliveryFee(self): 
+        self.exchangeDeliveryFee = self.lineEdit_exchangeDeliveryFee.text()
+
+
+
+
+
+
+
+
+        self.show()
 
 
 

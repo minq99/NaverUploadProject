@@ -61,7 +61,8 @@ def find_catalog_list(keyword):
     try:
         headers = { 'Authorization': f"Bearer {access_token}" }
         result = requests.get(url = Base_url + f'/v1/product-models?name={keyword}', headers=headers ).json()
-        print(f'[{keyword}] 검색 성공 : {len(result)}건')
+        num = result['totalElements']
+        print(f'[{keyword}] 검색 성공 : {num}건')
         return result
     except:
         print(f'[{keyword}] 검색 실패 ')
@@ -126,6 +127,10 @@ def get_standard_attribute( leafCategoryId, option_ClassName , options ):
         headers = {'Authorization': f'Bearer {access_token}'}
         res = requests.get(url = url, headers=headers)
                 
+        # 표준 옵션 없을 때
+        if json.loads(res.text)['useStandardOption'] == False:
+            return []
+
         # 표준 옵션 목록
         standard_options = json.loads(res.text)['standardOptionCategoryGroups']
         #  표준 옵션 : option_ClassName에 대한 표준옵션
@@ -137,6 +142,30 @@ def get_standard_attribute( leafCategoryId, option_ClassName , options ):
 
     except:
          print(f'*** [leafCategoryId: {leafCategoryId}] 카테고리의 {option_ClassName} 표준 옵션 가져오기 실패 ***')
+
+
+# leafCategoryId : 어떤 카테고리의 표준 옵션 정보를 가져올건지? id 입력: ex) 
+def get_standard_attribute_names(leafCategoryId):
+    try:
+        url = Base_url + f'/v1/options/standard-options?categoryId={leafCategoryId}'
+        headers = {'Authorization': f'Bearer {access_token}'}
+        res = requests.get(url = url, headers=headers)
+
+        # 표준 옵션 없을 때
+        if json.loads(res.text)['useStandardOption'] == False:
+            return []
+
+        # 표준 옵션 목록
+        standard_option_classes = json.loads(res.text)['standardOptionCategoryGroups']
+        standard_option_classes_name = [x['attributeName'] for x in  standard_option_classes ]
+        print(f'*** [leafCategoryId: {leafCategoryId}] 카테고리의 표준 옵션 클래스 리스트 가져오기 성공 ***')
+        # 주문가능 옵션 (사이즈명, attributeId,attributeValueId) 리스트
+        return standard_option_classes_name
+
+    except:
+        print(f'*** [leafCategoryId: {leafCategoryId}] 카테고리의 표준 옵션 클래스 리스트 가져오기 실패 ***')
+
+
 
 
 # 상품정보제공공시 기준 카테고리 리스트 조회
